@@ -13,8 +13,8 @@ export class AuthService {
         public afAuth: AngularFireAuth, // Inject Firebase auth service
         public router: Router) {
             
-        this.afAuth.authState.subscribe(user => {
-            console.log("user ", user, localStorage.getItem('user'));
+        /*this.afAuth.authState.subscribe(user => {
+            console.log("user ", user, "HEYYYYYYYYYY--------", localStorage.getItem('user'));
             if (user) {
                 console.log("entro")
                 // si hay datos desde firebase, que ya se inicio sesion o asi, entonces
@@ -23,14 +23,7 @@ export class AuthService {
                     localStorage.setItem('user', JSON.stringify(user));    
                 }
             }
-            /*if (user) {
-                localStorage.setItem('user', JSON.stringify(user));
-                JSON.parse(localStorage.getItem('user'));
-            } else {
-                localStorage.setItem('user', null);
-                JSON.parse(localStorage.getItem('user'));
-            }*/
-        });
+        });*/
         
     }
 
@@ -51,8 +44,13 @@ export class AuthService {
     }
 
     isLoggedIn(): boolean {
+        console.log("islogeedin")
         const user = JSON.parse(localStorage.getItem('user'));
-        return (user !== null && user.emailVerified);
+
+        console.log("User ", user)//, user.emailVerified);
+
+        //return true;
+        return (user !== null);// && user.emailVerified);
     }
 
 }

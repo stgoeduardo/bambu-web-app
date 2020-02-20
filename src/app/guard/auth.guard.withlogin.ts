@@ -6,18 +6,17 @@ import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuardWithlogin implements CanActivate {
     constructor(private authService: AuthService, private router: Router) {
 
     }
-
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         /*if(!this.authService.isLoggedIn) {
             // this.router.navigate(['/login']);
         }*/
-        if(!this.authService.isLoggedIn()) {
-            console.log("va a dirigir a login por que no hay user");
-            this.router.navigate(['/login']);
+        if(this.authService.isLoggedIn()) {
+            console.log("va a dirigir a home por que hay user");
+            this.router.navigate(['/home']);
         }
         /// this.authService.isLoggedIn();
         return true;

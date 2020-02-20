@@ -1,2 +1,20 @@
-<p>home works!</p>
-<button (click)="logout()">Salir</button>
+<div class="main-container">
+    <p>home works!</p>
+
+    <select name="" id="category" (change)="changeCategory($event)" [value]="categorySelected">
+        <option *ngFor="let category of categories" value="{{ category }}">{{ category }}</option>
+    </select>
+
+    <select name="" id="country" (change)="changeCountry($event)" [value]="shortCountrySelected">
+        <option *ngFor="let country of countries" value="{{ country.short }}">{{ country.name }}</option>
+    </select>
+
+    <button (click)="filterNews(true)">Filtrar</button>
+    <button (click)="filterNews(false)">Resetear</button>
+
+    <div *ngFor='let n of news'>
+        - {{ n.title}} <br>
+    </div>
+
+    <button (click)="logout()">Salir</button>
+</div>

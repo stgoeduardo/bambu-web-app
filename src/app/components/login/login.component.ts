@@ -22,6 +22,10 @@ export class LoginComponent implements OnInit {
       this.authService.login(email, password)
         .then(res => {
           console.log("res => ", res);
+          if (localStorage.getItem('user') == null) {
+            console.log("set item")
+            localStorage.setItem('user', JSON.stringify(res));
+          }
           this.router.navigate(['/home']);
         })
         .catch(err => {
