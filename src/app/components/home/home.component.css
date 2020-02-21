@@ -1,20 +1,18 @@
 .main-page {
-    /*border: 1px solid aqua;*/
-    height: 100vh;
-    overflow: auto;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
 }
 nav {
-    /*border: 1px solid red;*/
-    min-height: 80px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  min-height: 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 }
 .nav-title {
   font-size:30px;
@@ -31,14 +29,13 @@ nav {
   align-items: center;
 }
 .sections > li {
-    /*border: 1px solid blue;*/
-    margin: 0px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin: 0px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .img-admin {
-    margin: 0px 8px;
+  margin: 0px 8px;
 }
 .logo {
   width: 168px;
@@ -58,16 +55,11 @@ nav {
   font-weight: bolder;
 }
 main {
-    /*border: 1px solid green;*/
-    /*margin: 0px 108px;*/
-    flex: 1;
-    display: flex;
-    flex-flow: column nowrap;
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
 }
 .filters {
-  /*border: 1px solid orange;*/
-  /*padding: 8px;
-  margin-top: 32px;*/
   margin: 0px 128px;
   display: flex;
   flex-flow: row wrap;
@@ -79,25 +71,24 @@ main {
   color: var(--bambu, #333);
 }
 .filter-select {
-    padding: 8px;
+  padding: 8px;
 }
 .filter-btn {
-    /*border: 1px solid black;*/
-    width: 120px;
-    height: 40px;
-    margin: 24px 32px 32px 32px;
+  width: 120px;
+  height: 40px;
+  margin: 24px 32px 32px 32px;
 }
 .filt-ok {
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--bambu, #333);
-    color: var(--bambu, #333);
-    font-size: 16px;
-    font-weight: 300;
-    cursor: pointer;
-    text-transform: uppercase;
-    outline: none;
-    background: white;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--bambu, #333);
+  color: var(--bambu, #333);
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  background: white;
 }
 .filt-ok:hover {
   background: var(--bambu, #333);
@@ -105,16 +96,16 @@ main {
   font-weight: bolder;
 }
 .reset {
-    width: 100%;
-    height: 100%;
-    border: 1px solid orange;
-    color: orange;
-    font-size: 16px;
-    font-weight: 300;
-    cursor: pointer;
-    text-transform: uppercase;
-    outline: none;
-    background: white;
+  width: 100%;
+  height: 100%;
+  border: 1px solid orange;
+  color: orange;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  background: white;
 }
 .reset:hover {
   background: orange;
@@ -122,9 +113,9 @@ main {
   font-weight: bolder;
 }
 .filter {
-    width: 200px;
-    height: 48px;
-    margin: 24px 32px 32px 32px;
+  width: 200px;
+  height: 48px;
+  margin: 24px 32px 32px 32px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -135,17 +126,12 @@ main {
   cursor: pointer;
 }
 .cards {
-  /*border: 1px solid green;*/
-  /*margin-top: 32px;
-  margin-left: 52px;
-  margin-right: 52px;*/
   margin: 0px 108px;
   display: flex;
   flex-flow: row wrap;
   /*justify-content: space-between;*/
 }
 .card {
-  /*border: 1px solid aqua;*/
   flex:  23.5%;
   max-width: 23.5%;
   height: 375px;
@@ -154,14 +140,13 @@ main {
   flex-flow: column wrap;
   justify-content: flex-start;
   border-radius: 15px;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 }
 .header-card {
-  /*border: 1px solid blue;*/
   height: 192px;
 }
 .img-header {
@@ -173,7 +158,6 @@ main {
   border-radius: 15px 15px 0px 0px;
 }
 .body-card {
-  /*border: 1px solid green;*/
   display: flex;
   flex-direction: column;
 }
@@ -201,7 +185,6 @@ main {
 
 }
 .content-btn-view {
-  /*border: 1px solid red;*/
   margin: 0px 10px;
   display: flex;
   justify-content: flex-end;
@@ -227,14 +210,13 @@ main {
   color: var(--white, #fff);
 }
 footer {
-    /*border: 1px solid orange;*/
-    min-height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 1290px) { 
@@ -252,9 +234,9 @@ footer {
   .description {
     margin: 5px 16px 0px 16px;
     font-size: 12px;
-   
   }
 }
+
 @media (max-width: 1200px) { 
   .filter {
     margin: 24px 15px 32px 10px;
@@ -263,9 +245,10 @@ footer {
     margin: 24px 5px 32px 5px;
   }
   .filter-select {
-      padding: 0px;
+    padding: 0px;
   }
 }
+
 @media (max-width: 1050px) {
   .cards {
     margin: 0px 75px;
@@ -306,7 +289,6 @@ footer {
   .card {
     flex:  42%;
     max-width: 42%;
-    /*margin: 0px 45px 48px 45px;*/
   }
 }
 
@@ -320,11 +302,11 @@ footer {
   }
   .logo {
     width: 120px;
-    height: 80px;
+  height: 80px;
   }
   .img-admin {
     width: 25px;
-    height: 25px;
+  height: 25px;
   }
   .logout {
     padding: 3px;
@@ -334,7 +316,7 @@ footer {
   }
   .filter-select {
     padding: 0;
-    margin: 0 auto;
+  margin: 0 auto;
   }
   .filter {
     width: 92%;

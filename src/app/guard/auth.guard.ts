@@ -7,19 +7,14 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-    constructor(private authService: AuthService, private router: Router) {
-
-    }
-
+    constructor(private authService: AuthService, private router: Router) { }
+    
+    // service that help my page to verify if exist or no active session.
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        /*if(!this.authService.isLoggedIn) {
-            // this.router.navigate(['/login']);
-        }*/
+        // If user doesnt exist, redirect login...
         if(!this.authService.isLoggedIn()) {
-            console.log("va a dirigir a login por que no hay user");
             this.router.navigate(['/login']);
         }
-        /// this.authService.isLoggedIn();
         return true;
     }
 }
