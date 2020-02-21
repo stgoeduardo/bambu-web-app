@@ -15,7 +15,7 @@ export const environment = {
     measurementId: "xxxx-xxxxxx",
   },
   urlNews: 'http://newsapi.org/v2/top-headlines',
-  apiKeyNews: 'c9b3bf15fa934f548352fb1182e983fb'
+  apiKeyNews: 'xxxx'
 };
 
 /*
