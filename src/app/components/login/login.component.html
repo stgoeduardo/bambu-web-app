@@ -1,13 +1,17 @@
-<div class="main-container">
-    <div class="form">
+<div class="form-container">
+    <div class="form-cont">
         <h3>Login</h3>
+        <div class="container-input">
+				<label for="input1" class="form-label">Input without validations</label>
+				<input type="text" name="example1" placeholder="Write some text.." id="input1" class="form-input">
+			</div>
         <div>
             <label for="user">User:</label>
             <input id="user" type="text" class="" #userName>
         </div>
         <div>
             <label for="password">Password:</label>
-            <input id="password" type="text" class="" #password>
+            <input id="password" type="password" class="" #password>
         </div>
         <div>
             <button class="" (click)="login(userName.value, password.value)">Login</button>

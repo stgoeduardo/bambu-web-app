@@ -1,8 +1,48 @@
-.form {
-    border: 1px solid var(--primary-color, red);
-    padding: 5px;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: column wrap;
-    width: 75%;
+.form-container {
+    border: 1px solid lightgrey;
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-container h3 {
+  text-align: center;
+  flex: 1 1 100%;
+}
+
+.form-cont {
+  /*border: 1px solid green;*/
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.container-input {
+  /*border: 1px solid blue;*/
+  margin: 5px;
+  flex: 1 1 48%;
+  align-self: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 3px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin: 5px 0px;
+}
+
+.form-input {
+  height: 2.3em;
+  border: 1px solid lightgrey;
+  padding: 0rem .5rem;
+  font-size: 1rem;
+  color: #888;
+  border-radius: 5px;
+  background: #fff;
 }

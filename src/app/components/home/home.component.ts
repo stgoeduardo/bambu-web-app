@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  user: any;
   countries: any[];
   categories: string[];
-  news: any[];
+  news: any[] = [];
   shortCountrySelected: string;
   countrySelected: string;
   categorySelected: string;
+  limitText: number = 35;
 
   constructor(private authService: AuthService,
               private newsService: NewsService,
@@ -29,6 +30,10 @@ export class HomeComponent implements OnInit {
   }
 
   initSearch() {
+    //if (localStorage.getItem('user') != null) {
+    let tmpUser = JSON.parse(localStorage.getItem('user'));
+    this.user = tmpUser.user;
+    //}
     this.shortCountrySelected = 'mx';
     this.countrySelected = 'Mexico';
     this.categorySelected = 'general';
@@ -37,7 +42,35 @@ export class HomeComponent implements OnInit {
   getNews() {
     this.newsService.getNews(this.shortCountrySelected, this.categorySelected).subscribe(data => {
       console.log("Data ", data);
+      this.news = [];
       this.news = data.articles;
+      this.news.forEach(item => {
+        console.log("item ", item.title, item.title.length);
+        if (item.title){
+          item.title = (item.title.length > this.limitText) ? item.title.substring(0, this.limitText) + "..." : item.title ;
+        }
+        if (item.content) {
+          item.content = (item.content.length > this.limitText) ? item.content.substring(0, this.limitText) + "..." : item.content;
+        }
+        if (item.author) {
+          item.author = (item.author.length > this.limitText) ? item.author.substring(0, this.limitText) + "..." : item.author;
+        } else {
+          item.author = "Sin autor.";
+        }
+        /*if(item.title.length > this.limitText) {
+          item.title = item.title.substring(0, this.limitText) + "...";
+        }
+        if (item.content.length > this.limitText) {
+          item.content = item.content.substring(0, this.limitText) + "...";
+        }
+        if(item.author === null || item.author === '') {
+          item.author = "Sin autor.";
+        } else {
+          if (item.author.length > this.limitText) {
+            item.author = item.author.substring(0, this.limitText) + "...";
+          }
+        }*/
+      })
     }, error => {
       console.log("Error ", error);
     })
@@ -63,6 +96,14 @@ export class HomeComponent implements OnInit {
       this.initSearch();
     }
     this.getNews();
+  }
+
+  loadDefaultImageWhenFailedUrlImageNew(evt) {
+    evt.target.src = 'https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg';
+  }
+
+  goToURL(url: string) {
+    window.open(url, '_blank');
   }
 
   logout() {
