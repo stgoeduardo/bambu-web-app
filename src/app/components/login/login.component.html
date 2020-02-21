@@ -1,20 +1,24 @@
-<div class="form-container">
-    <div class="form-cont">
-        <h3>Login</h3>
+<div class="main-form-container">
+    <div class="form-container">
+        <img src="assets/img/woolworth.png">
+        <h2><em>Bienvenido a BambuNews</em></h2>
+        <h3>Inicie Sesion</h3>
         <div class="container-input">
-				<label for="input1" class="form-label">Input without validations</label>
-				<input type="text" name="example1" placeholder="Write some text.." id="input1" class="form-input">
-			</div>
-        <div>
-            <label for="user">User:</label>
-            <input id="user" type="text" class="" #userName>
+		    <label for="email" class="form-label">Correo Electronico</label>
+			<input type="email" name="email" #userName placeholder="bambu@domain.com" id="email" class="form-input">
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input id="password" type="password" class="" #password>
+        <div class="container-input">
+		    <label for="password" class="form-label">Input without validations</label>
+			<input type="password" name="password" #password placeholder="Contraseña" id="password" class="form-input">
         </div>
-        <div>
-            <button class="" (click)="login(userName.value, password.value)">Login</button>
+        <div class="container-button">
+            <button type="submit" class="form-btn" (click)="login(userName, password)">Entrar</button>
+        </div>
+        <div class="msg-ok" *ngIf="isOkRegister">
+            {{ message }}
+        </div>
+        <div class="msg-error" *ngIf="isError">
+            {{ message }} <strong><a (click)="register(userName, password)" *ngIf="isRegisterUser">¿desea registrar a este usuario?</a></strong>
         </div>
     </div>
 </div>

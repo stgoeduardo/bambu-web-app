@@ -4,9 +4,9 @@
       <li>
         <img src="assets/img/woolworth.png" alt="Logo" class="logo">
       </li>
-      <li style="font-size:30px;font-weight: 900;">Noticias</li>
-      <li style="font-size:14px;font-weight: normal;">
-        {{ user.email }} 
+      <li class="nav-title">Noticias</li>
+      <li class="nav-user">
+        <span>{{ user.email }} </span> 
         <img src="assets/img/admin.png" alt="" class="img-admin">
         <button class="logout" (click)="logout()">Salir</button>
       </li>
@@ -14,6 +14,7 @@
   </nav>
   <main>
     <div class="filters">
+      <h3>Noticias: <strong><em>{{ categorySelected }}</em></strong> ({{ countrySelected }})</h3>
       <div class="filter-select">
         <select class="filter" id="category" (change)="changeCategory($event)" [value]="categorySelected">
           <option *ngFor="let category of categories" value="{{ category }}">{{ category }}</option>
@@ -54,107 +55,7 @@
           </div>
         </div>
       </div>
-      <!-- div class="card">
-        <div class="header-card">
-          <img class="img-header" 
-          src="https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg" 
-          alt="">
-        </div>
-        <div class="body-card">
-          <p class="title">El mejor asistente de voz del año</p>
-          <p class="date">Publicado: 01 de diciembre 2019</p>
-          <p class="description">
-            Mauris aklsdkalsjdsklas ddlsa asdlñkaslsdk asñ kñdlask dñlsk
-            <span>Por Lao</span>
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        Card 1
-      </div>
-      <div class="card">
-        Card 1
-      </div>
-      <div class="card">
-        Card 1
-      </div>
-      <div class="card">
-        Card 1
-      </div-->
     </div>
   </main>
-  <footer>Copyright, 2020</footer>
+  <footer>&copy;Copyright-<strong> Bambu</strong>, 2020</footer>
 </div>
-
-
-<!-- div class="main-container">
-    <p>{{ user.email }}</p>
-
-    <select name="" id="category" (change)="changeCategory($event)" [value]="categorySelected">
-        <option *ngFor="let category of categories" value="{{ category }}">{{ category }}</option>
-    </select>
-
-    <select name="" id="country" (change)="changeCountry($event)" [value]="shortCountrySelected">
-        <option *ngFor="let country of countries" value="{{ country.short }}">{{ country.name }}</option>
-    </select>
-
-    <button (click)="filterNews(true)">Filtrar</button>
-    <button (click)="filterNews(false)">Resetear</button>
-
-    <div *ngFor='let n of news'>
-        - {{ n.title}} <br>
-    </div>
-
-    <button (click)="logout()">Salir</button>
-</div-->
-<!-- nav>
-  <ul class="sections">
-    <li>
-    <img src="img/woolworth.png" alt="Logo" class="logo">
-    </li>
-    <li style="font-size:30px;font-weight: 900;">Noticias</li>
-    <li style="font-size:14px;font-weight: normal;">
-      {{ user.email }} <span>Circle {{ user.email }}</span>
-    </li>
-  </ul>
-</nav>
-<main>
-
-  <div class="filters">
-    <div class="filter-select">
-      <select class="filter" name="">
-        <option value="">Filtro 1</option>
-        <option value="">Filtro 2</option>
-      </select>
-    </div>
-    <div class="filter-select space-left">
-      <select class="filter" name="">
-        <option value="">Filtro 3</option>
-        <option value="">Filtro 4</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="cards">
-    <div class="card" style="border: 1px solid red;width: 312px;height: 320px;">
-      Card 1
-    </div>
-    <div class="card" style="border: 1px solid red;width: 312px;height: 320px;">
-      Card 1
-    </div>
-    <div class="card" style="border: 1px solid red;width: 312px;height: 320px;">
-      Card 1
-    </div>
-    <div class="card" style="border: 1px solid red;width: 312px;height: 320px;">
-      Card 1
-    </div>
-    <div class="card" style="border: 1px solid red;width: 312px;height: 320px;">
-      Card 1
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  Footer
-</footer-->

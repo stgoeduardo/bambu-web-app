@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   shortCountrySelected: string;
   countrySelected: string;
   categorySelected: string;
-  limitText: number = 35;
+  limitText: number = 25;
 
   constructor(private authService: AuthService,
               private newsService: NewsService,
@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadDefaultImageWhenFailedUrlImageNew(evt) {
-    evt.target.src = 'https://www.gettyimages.es/gi-resources/images/500px/983794168.jpg';
+    evt.target.src = 'https://dayton247now.com/resources/media/3c3ebf2b-f922-417f-acd3-14b9a71e0258-large16x9_breakingnews.png?1571176938180';
   }
 
   goToURL(url: string) {

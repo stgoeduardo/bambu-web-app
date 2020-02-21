@@ -8,49 +8,39 @@ import { Router } from "@angular/router";
     providedIn: 'root'
 })
 export class AuthService {
-
-    constructor(public afs: AngularFirestore,   // Inject Firestore service
-        public afAuth: AngularFireAuth, // Inject Firebase auth service
+    // constructor with angularfirestore, angularefireauth and router instances
+    constructor(public angularFireStore: AngularFirestore,   // Inject Firestore service
+        public anglarFireAuth: AngularFireAuth, // Inject Firebase auth service
         public router: Router) {
-            
-        /*this.afAuth.authState.subscribe(user => {
-            console.log("user ", user, "HEYYYYYYYYYY--------", localStorage.getItem('user'));
-            if (user) {
-                console.log("entro")
-                // si hay datos desde firebase, que ya se inicio sesion o asi, entonces
-                if (localStorage.getItem('user') == null) {
-                    console.log("set item")
-                    localStorage.setItem('user', JSON.stringify(user));    
-                }
-            }
-        });*/
-        
     }
-
+    // service to make a request for create an user in firebase
+    register(email: string, password: string) {
+        return new Promise<any>( (resolve, reject) => {
+            this.anglarFireAuth.auth.createUserWithEmailAndPassword(email, password)
+                .then(res => resolve(res))
+                .catch(err => reject(err));
+        });
+    }
+    // service to make a request for login an user in firebase
     login(email:string, password:string) {
         return new Promise<any>( (resolve, reject) => {
-            this.afAuth.auth.signInWithEmailAndPassword(email, password)
+            this.anglarFireAuth.auth.signInWithEmailAndPassword(email, password)
                 .then(res => resolve(res))
                 .catch(err => reject(err));
         });
     }
-
+    // logout from firebase
     logout() {
         return new Promise<any>((resolve, reject) => {
-            this.afAuth.auth.signOut()
+            this.anglarFireAuth.auth.signOut()
                 .then(res => resolve(res))
                 .catch(err => reject(err));
         });
     }
-
+    // verified if user exist in localStorage
     isLoggedIn(): boolean {
-        console.log("islogeedin")
         const user = JSON.parse(localStorage.getItem('user'));
-
-        console.log("User ", user)//, user.emailVerified);
-
-        //return true;
-        return (user !== null);// && user.emailVerified);
+        return (user !== null);
     }
 
 }
