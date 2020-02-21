@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 /* https://www.positronx.io/full-angular-7-firebase-authentication-system/ 
@@ -10,7 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { RegisterComponent } from './components/register/register.component';
+// import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -20,7 +22,7 @@ import { AuthService } from "./services/auth.service";
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    // RegisterComponent,
     LoginComponent,
     HomeComponent
   ],
@@ -30,7 +32,8 @@ import { AuthService } from "./services/auth.service";
     // firebase services
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [ AuthService ],
   bootstrap: [AppComponent]

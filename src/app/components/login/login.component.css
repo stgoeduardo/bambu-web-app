@@ -1,0 +1,140 @@
+.main-form-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  width: 60%;
+  margin: 3rem auto;
+
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+.main-form-container h2, h3 {
+  text-align: center;
+  flex: 1 1 100%;
+  margin: 10px 0px;
+  color: var(--bambu, #333);
+}
+
+.form-container {
+  /*border: 1px solid green;*/
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.container-input {
+  /*border: 1px solid blue;*/
+  margin: 5px;
+  flex: 100%;
+  align-self: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 3px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin: 5px 0px;
+  color: var(--bambu, #333);
+}
+
+.form-input {
+  height: 2.3em;
+  border: 1px solid lightgrey;
+  padding: 0rem .5rem;
+  font-size: 1rem;
+  color: #888;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.container-button {
+  flex-basis: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  /*border: 1px solid green;*/
+  margin: 5px;
+  padding: 5px;
+}
+.container-button button {
+  margin: 15px 10px;
+}
+.form-btn {
+  width: 200px;
+  background: transparent;
+  font-size: 1em;
+  padding: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--bambu, #307BFF);
+  color: var(--bambu, #307BFF);
+}
+
+.msg-ok {
+  width: 100%;
+  padding: 5px 10px;
+  color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+.msg-error {
+  width: 100%;
+  padding: 5px 10px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.msg-error > strong {
+  cursor: pointer;
+}
+
+
+/* Large devices (desktops, 992px and less)*/
+@media (max-width: 992px) {
+  .main-form-container  {
+    /*border: 1px solid green;*/
+    width: 90%;
+  }
+}
+
+/*Medium devices (tablets, 768px and less)*/
+@media (max-width: 768px) {
+  .main-form-container  {
+    /*border: 1px solid blue;*/
+    width: 90%;
+  }
+}
+
+/* Small devices (landscape phones, 576px and less)*/
+@media (max-width: 576px) {
+  .main-form-container  {
+    /*border: 1px solid red;*/
+    width: 80%;
+  }
+  .main-form-container h2 {
+    font-size: 18px;
+  }
+  .main-form-container h3 {
+    font-size: 14px;
+  }
+  .form-label {
+    font-size: 12px;
+  }
+  .form-input {
+    font-size: 12px;
+  }
+  .form-btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+}

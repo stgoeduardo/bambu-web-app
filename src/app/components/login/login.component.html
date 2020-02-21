@@ -1,2 +1,24 @@
-<p>login works!</p>
-<a [routerLink]="['/register']">Registro</a>
+<div class="main-form-container">
+    <div class="form-container">
+        <img src="assets/img/woolworth.png">
+        <h2><em>Bienvenido a BambuNews</em></h2>
+        <h3>Inicie Sesion</h3>
+        <div class="container-input">
+		    <label for="email" class="form-label">Correo Electronico</label>
+			<input type="email" name="email" #userName placeholder="bambu@domain.com" id="email" class="form-input">
+        </div>
+        <div class="container-input">
+		    <label for="password" class="form-label">Input without validations</label>
+			<input type="password" name="password" #password placeholder="Contraseña" id="password" class="form-input">
+        </div>
+        <div class="container-button">
+            <button type="submit" class="form-btn" (click)="login(userName, password)">Entrar</button>
+        </div>
+        <div class="msg-ok" *ngIf="isOkRegister">
+            {{ message }}
+        </div>
+        <div class="msg-error" *ngIf="isError">
+            {{ message }} <strong><a (click)="register(userName, password)" *ngIf="isRegisterUser">¿desea registrar a este usuario?</a></strong>
+        </div>
+    </div>
+</div>

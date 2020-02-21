@@ -1,1 +1,61 @@
-<p>home works!</p>
+<div class="main-page">
+  <nav>
+    <ul class="sections">
+      <li>
+        <img src="assets/img/woolworth.png" alt="Logo" class="logo">
+      </li>
+      <li class="nav-title">Noticias</li>
+      <li class="nav-user">
+        <span>{{ user.email }} </span> 
+        <img src="assets/img/admin.png" alt="" class="img-admin">
+        <button class="logout" (click)="logout()">Salir</button>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="filters">
+      <h3>Noticias: <strong><em>{{ categorySelected }}</em></strong> ({{ countrySelected }})</h3>
+      <div class="filter-select">
+        <select class="filter" id="category" (change)="changeCategory($event)" [value]="categorySelected">
+          <option *ngFor="let category of categories" value="{{ category }}">{{ category }}</option>
+        </select>
+      </div>
+      <div class="filter-select space-left">
+        <select class="filter" id="country" (change)="changeCountry($event)" [value]="shortCountrySelected">
+          <option *ngFor="let country of countries" value="{{ country.short }}">{{ country.name }}</option>
+        </select>
+      </div>
+      <div class="filter-select">
+        <div class="filter-btn">
+          <button class="filt-ok" (click)="filterNews(true)">Filtrar</button>
+        </div>
+      </div>
+      <div class="filter-select">
+        <div class="filter-btn">
+          <button class="reset" (click)="filterNews(false)">Resetear</button>
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card" *ngFor='let n of news'>
+        <div class="header-card">
+          <a (click)="goToURL(n.url)">
+            <img class="img-header" [src]="n.urlToImage" (error)="loadDefaultImageWhenFailedUrlImageNew($event)" [alt]="n.title">
+          </a>
+        </div>
+        <div class="body-card">
+          <p class="title">{{ n.title }}</p>
+          <p class="date">Publicado: {{ n.publishedAt | date }}</p>
+          <p class="description">
+            {{ n.content }}
+            <span>Por: {{ n.author }}</span>
+          </p>
+          <div class="content-btn-view">
+            <button (click)="goToURL(n.url)" class="btn-view">Ver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>&copy;Copyright-<strong> Bambu</strong>, 2020</footer>
+</div>
